@@ -10,7 +10,7 @@
     "Physical Web", "BLE", "bluetooth low energy", "bluetooth",
     "node-red",
     "Eddystone",
-    "beacons", "beacon",
+    "beacons", "beacon"
   ],
   "node-red": {}
 }
