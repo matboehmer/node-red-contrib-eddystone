@@ -4,9 +4,20 @@
 
 Create an [Eddystone](https://github.com/google/eddystone) Beacon using [Node-RED](http://nodered.org/). [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url) beacons can be used with the [Physical Web](http://google.github.io/physical-web/). Add this node to your Node-RED environment for easy prototyping for the Physical Web.
 
+## Installation
+
+First install Node RED, if not done yet, and add node-red-contrib-eddystone:
+
+```
+npm install node-red -g
+npm install node-red-contrib-eddystone -g
+```
+
 ## Prerequisites
 
 **node-red-contrib-eddystone** is based on the awesome [node-eddystone-beacon](https://github.com/don/node-eddystone-beacon). However, node-eddystone-beacon has the same [prerequesits](https://github.com/don/node-eddystone-beacon#prerequisites) you might want to check. For instance, you might need to run Node-RED with root permissions for accessing the Bluetooth interface depending on your setup.
+
+We recommend to use a Raspberry Pi with a Bluetooth 4.0 compatible USB dongle.
 
 ## Example
 This flow allows to control a Eddystone URL beacon for setting the URL, starting and stopping broadcasting, setting temperature, and setting power. All parameters can be set by sending messages to the EddystoneURL node.
