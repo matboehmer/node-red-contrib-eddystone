@@ -1,26 +1,37 @@
 <script type="text/javascript">
-    RED.nodes.registerType('eddystone',{
+    RED.nodes.registerType('eddystone-url',{
         category: 'advanced',
         color: '#2F79CD',
         defaults: {
-            name: {value: "eddystone"}
+            name: {value: "Eddystone URL"},
+            url: {value: "http://moxd.io"}
         },
         inputs: 1,
-        outputs: 0,
+        outputs: 1,
         icon: "eddystone.png",
         label: function() {
-            return this.name || "eddystone";
+            return this.name || "Eddystone URL";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="eddystone">
+<script type="text/x-red" data-template-name="eddystone-url">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-url"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="URL">
+    </div>
 </script>
 
-<script type="text/x-red" data-help-name="eddystone">
-    <p>A node working as an Eddystone beacon.</p>
+<script type="text/x-red" data-help-name="eddystone-url">
+    <p>A node working as an Eddystone beacon with Bluetooth LE.</p>
+    <h3>Input message</h3>
+    <p>You can send all properties of the node as a property of a message to change their values during runtime. For instance this can be used to turn the beacon on/off or change the URL during runtime.</p>
+    <pre>msg.url = "http://moxd.io";
+msg.active = false;</pre>
+    <h3>Output message</h3>
+    <p>The input message is just passed through. This might be convenient for working with the data the beacon provides.</p>
 </script>

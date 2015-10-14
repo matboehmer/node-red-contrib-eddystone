@@ -1,21 +1,53 @@
 module.exports = function(RED) {
 
-    console.log("hello Eddystone module");
+    function EddystoneURLNode(config) {
 
-    var eddystoneBeacon = require('eddystone-beacon');
-
-    function EddystoneNode(config) {
         RED.nodes.createNode(this, config);
+
+        this.eddystoneBeacon = require('eddystone-beacon');
+
+        // get properties
+        this.url = config.url;
 
         var node = this;
 
         this.on('input', function(msg) {
-			console.log(msg);
-            node.log("url: " + msg.url);
+
+            var url = msg.url || node.url;
+            node.url = url;
+
+            var active = (typeof msg.active !== 'undefined') ? msg.active : node.active;
+            node.active = active;
+
+            if (typeof msg.batteryVoltage !== 'undefined') {
+                node.eddystoneBeacon.setBatteryVoltage(msg.batteryVoltage);
+            }
+
+            if (typeof msg.temperature !== 'undefined') {
+                node.eddystoneBeacon.setTemperature(msg.temperature);
+            }
+
+
+            if (active) { // set beacon active
+                node.eddystoneBeacon.advertiseUrl(url);
+            } else { // set beacon inactive
+                node.eddystoneBeacon.stop();
+            }
+
+            displayStatus(node);
             node.send(msg);
-            eddystoneBeacon.advertiseUrl(msg.url);
         });
+
+        displayStatus(node);
     }
 
-    RED.nodes.registerType("eddystone", EddystoneNode);
+    function displayStatus(node) {
+      if (node.active) {
+          node.status({fill:"blue",shape:"dot",text:"broadcasting URL"});
+      } else {
+          node.status({fill:"blue",shape:"ring",text:"stopped"});
+      }
+    }
+
+    RED.nodes.registerType("eddystone-url", EddystoneURLNode);
 }
