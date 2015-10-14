@@ -11,9 +11,9 @@ Create an [Eddystone](https://github.com/google/eddystone) Beacon using [Node-RE
 ## Example
 This flow allows to control a Eddystone URL beacon for setting the URL, starting and stopping broadcasting, setting temperature, and setting power. All parameters can be set by sending messages to the EddystoneURL node.
 
-![sample](img/sample.png =600x)
+![sample](img/sample.png)
 
 The official [Android App for The Physical Web](https://play.google.com/store/apps/details?id=physical_web.org.physicalweb) might me a nice addition for testing and playing around:
 
-![screen01](img/screen01.png =200x)
-![screen02](img/screen02.png =200x)
+![screen01](img/screen01.png)
+![screen02](img/screen02.png)
