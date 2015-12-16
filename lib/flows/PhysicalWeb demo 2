@@ -1,0 +1,100 @@
+[
+    {
+        "id": "1483f35e.717c5d",
+        "type": "display",
+        "active": true,
+        "x": 650.5,
+        "y": 220,
+        "z": "c3aed0d3.3ce58",
+        "wires": []
+    },
+    {
+        "id": "97d51a50.1542d8",
+        "type": "info",
+        "name": "Cliquez ci-dessous et regardez le résultat dans l'application Physical Web de votre téléphone",
+        "info": "",
+        "icon": "commentdown.png",
+        "langs": [
+            {
+                "key": "en-US",
+                "title": "Clic below and look the result into the physical web app on a phone",
+                "body": "",
+                "isDefault": true
+            },
+            {
+                "key": "fr-FR",
+                "title": "Cliquez ci-dessous et regardez le résultat dans l'application Physical Web de votre téléphone",
+                "body": "",
+                "isDefault": false
+            }
+        ],
+        "x": 376,
+        "y": 155,
+        "z": "c3aed0d3.3ce58",
+        "wires": []
+    },
+    {
+        "id": "8eabefef.b93fe8",
+        "type": "eddystone-url",
+        "name": "Eddystone",
+        "url": "http://moxd.io",
+        "x": 502,
+        "y": 220,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "1483f35e.717c5d"
+            ]
+        ]
+    },
+    {
+        "id": "f9067e91.25684",
+        "type": "Open",
+        "x": 289,
+        "y": 201,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "8eabefef.b93fe8"
+            ]
+        ]
+    },
+    {
+        "id": "bb6837ab.1e90a8",
+        "type": "Close",
+        "x": 289.5,
+        "y": 241,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "8eabefef.b93fe8"
+            ]
+        ]
+    },
+    {
+        "id": "3165c8c8.735dc",
+        "type": "go",
+        "name": "",
+        "x": 129,
+        "y": 201,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "f9067e91.25684"
+            ]
+        ]
+    },
+    {
+        "id": "4419f88b.cfd7a8",
+        "type": "go",
+        "name": "",
+        "x": 129,
+        "y": 241,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "bb6837ab.1e90a8"
+            ]
+        ]
+    }
+]

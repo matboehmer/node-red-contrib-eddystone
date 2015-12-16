@@ -1,16 +1,16 @@
 <script type="text/javascript">
     RED.nodes.registerType('eddystone-url',{
         category: 'advanced',
-        color: '#2F79CD',
+        color: '#FFF',
         defaults: {
-            name: {value: "Eddystone URL"},
+            name: {value: "Eddystone"},
             url: {value: "http://moxd.io"}
         },
         inputs: 1,
         outputs: 1,
         icon: "eddystone.png",
         label: function() {
-            return this.name || "Eddystone URL";
+            return this.name || "Eddystone";
         }
     });
 </script>

@@ -13,10 +13,22 @@ module.exports = function(RED) {
 
         this.on('input', function(msg) {
 
-            var url = msg.url || node.url;
+            var url = msg.url || msg.payload || node.url ;
             node.url = url;
-
-            var active = (typeof msg.active !== 'undefined') ? msg.active : node.active;
+			
+			var active = true;
+			
+			if (msg.active) 
+				active = msg.active;
+			else if (node.active)
+				active = node.active;
+			
+			if(msg.intent == 1) // open
+				active = true;
+				
+			if(msg.intent == 0) // close
+				active = false;
+				
             node.active = active;
 
             if (typeof msg.batteryVoltage !== 'undefined') {
