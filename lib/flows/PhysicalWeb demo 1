@@ -1,0 +1,52 @@
+[
+    {
+        "id": "97d51a50.1542d8",
+        "type": "info",
+        "name": "Cliquez ci-dessous et regardez le résultat dans l'application Physical Web de votre téléphone",
+        "info": "",
+        "icon": "commentdown.png",
+        "langs": [
+            {
+                "key": "en-US",
+                "title": "Clic below and look the result into the physical web app on a phone",
+                "body": "",
+                "isDefault": true
+            },
+            {
+                "key": "fr-FR",
+                "title": "Cliquez ci-dessous et regardez le résultat dans l'application Physical Web de votre téléphone",
+                "body": "",
+                "isDefault": false
+            }
+        ],
+        "x": 376,
+        "y": 155,
+        "z": "c3aed0d3.3ce58",
+        "wires": []
+    },
+    {
+        "id": "8eabefef.b93fe8",
+        "type": "eddystone-url",
+        "name": "Eddystone",
+        "url": "http://moxd.io",
+        "x": 342,
+        "y": 200,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3165c8c8.735dc",
+        "type": "go",
+        "name": "",
+        "x": 110,
+        "y": 200,
+        "z": "c3aed0d3.3ce58",
+        "wires": [
+            [
+                "8eabefef.b93fe8"
+            ]
+        ]
+    }
+]

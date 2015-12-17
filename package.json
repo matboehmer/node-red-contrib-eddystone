@@ -6,6 +6,10 @@
   "dependencies": {
     "eddystone-beacon": "1.0.3"
   },
+  "scripts":{
+	"preinstall":"sudo apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev"
+  },
+  "installation-duration":300,
   "keywords": [
     "Physical Web",
     "BLE",
