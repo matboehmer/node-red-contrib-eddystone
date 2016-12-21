@@ -1,13 +1,13 @@
 {
   "name": "node-red-contrib-eddystone",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Creating Eddystone beacons with Node RED.",
-  "authos": "matboehmer",
+  "authors": "matboehmer",
   "dependencies": {
     "eddystone-beacon": "1.0.3"
   },
   "scripts":{
-	"preinstall":"apt-get update; apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev"
+	
   },
   "installation-duration":350,
   "keywords": [
