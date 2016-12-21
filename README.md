@@ -15,7 +15,25 @@ npm install node-red-contrib-eddystone -g
 
 ## Prerequisites
 
-**node-red-contrib-eddystone** is based on the awesome [node-eddystone-beacon](https://github.com/don/node-eddystone-beacon). However, node-eddystone-beacon has the same [prerequesits](https://github.com/don/node-eddystone-beacon#prerequisites) you might want to check. For instance, you might need to run Node-RED with root permissions for accessing the Bluetooth interface depending on your setup.
+**node-red-contrib-eddystone** is based on the awesome [node-eddystone-beacon](https://github.com/don/node-eddystone-beacon). However, node-eddystone-beacon has the same [prerequesits](https://github.com/don/node-eddystone-beacon#prerequisites) you might want to check. 
+
+You can install the prerequisite packages with the following command
+
+```
+sudo apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
+```
+
+On Linux Bluetooth LE requires root access to the hardware to work, you can achive this by running Node-RED as root or by setting the required flags on the node binary with the following command.
+
+```
+sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
+```
+
+setcap can be installed with the following command if needed
+
+```
+sudo apt-get install libcap2-bin
+```
 
 We recommend to use a Raspberry Pi with a Bluetooth 4.0 compatible USB dongle.
 
